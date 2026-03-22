@@ -2,10 +2,10 @@ module capwm (
     input  wire clk,               
     input  wire rst_n,             
     input  wire [11:0] duty_cycle, // 12 bit resolution
-    output wire pwm_out
+    output wire pwm_out // output frequency is 6.1KHz
 );
 
-    localparam MAX_COUNT = 50_000_000 / (2 * 10_000); // 2500
+    localparam MAX_COUNT = 4096;
 
     reg [11:0] counter;
     reg count_dir;
