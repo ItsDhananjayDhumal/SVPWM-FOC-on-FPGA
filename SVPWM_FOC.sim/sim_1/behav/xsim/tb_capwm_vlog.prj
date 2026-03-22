@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../SVPWM_FOC.srcs/sources_1/new/capwm.v" \
+"../../../../SVPWM_FOC.srcs/sim_1/new/tb_capwm.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

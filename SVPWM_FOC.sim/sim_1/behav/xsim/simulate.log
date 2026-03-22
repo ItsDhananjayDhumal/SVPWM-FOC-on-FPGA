@@ -1,0 +1,14 @@
+Time resolution is 1 ps
+--- Starting 10 kHz Center-Aligned PWM Simulation ---
+Time: 100000 ns | Target: 10% | Register Value: 250
+Time: 900130000 ns | Target: 20% | Register Value: 500
+Time: 1900130000 ns | Target: 30% | Register Value: 750
+Time: 2900130000 ns | Target: 40% | Register Value: 1000
+Time: 3900130000 ns | Target: 50% | Register Value: 1250
+Time: 4900130000 ns | Target: 60% | Register Value: 1500
+Time: 5900130000 ns | Target: 70% | Register Value: 1750
+Time: 6900130000 ns | Target: 80% | Register Value: 2000
+Time: 7900130000 ns | Target: 90% | Register Value: 2250
+Time: 8900130000 ns | Target: 100% | Register Value: 2500
+Time: 9900130000 ns | Simulation Complete.
+$finish called at time : 9900130 ns : File "C:/Users/Dhananjay Dhumal/SVPWM_FOC/SVPWM_FOC.srcs/sim_1/new/tb_capwm.v" Line 67
