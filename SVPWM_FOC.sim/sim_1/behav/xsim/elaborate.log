@@ -1,7 +1,7 @@
 Vivado Simulator v2023.2
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_SVPWM_behav xil_defaultlib.tb_SVPWM xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_freq_behav xil_defaultlib.tb_freq xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
@@ -13,6 +13,6 @@ Compiling module xil_defaultlib.sine_lut
 Compiling module xil_defaultlib.phase_vector_generator
 Compiling module xil_defaultlib.capwm
 Compiling module xil_defaultlib.SVPWM
-Compiling module xil_defaultlib.tb_SVPWM
+Compiling module xil_defaultlib.tb_freq
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot tb_SVPWM_behav
+Built simulation snapshot tb_freq_behav

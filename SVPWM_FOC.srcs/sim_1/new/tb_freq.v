@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module tb_SVPWM();
+module tb_freq();
 
     reg clk_50M;
     reg rst_n;
@@ -41,11 +41,40 @@ module tb_SVPWM();
 
         // Sweep the angle from 0 to 4095
         // We wait 50 microseconds per step to let the PWM cycle run a few times
+//        for (i = 0; i < 4096; i = i + 1) begin
+//            elec_angle = i[11:0];
+//            #50000; 
+//        end
+//        for (; i < 8192; i = i + 1) begin
+//            elec_angle = i[11:0];
+//            #25000; 
+//        end
+//        for (; i < 12288; i = i + 1) begin
+//            elec_angle = i[11:0];
+//            #12500; 
+//        end
+//        for (; i < 24576; i = i + 1) begin
+//            elec_angle = i[11:0];
+//            #6250; 
+//        end
+
         for (i = 0; i < 4096; i = i + 1) begin
             elec_angle = i[11:0];
-            #50000; 
+            #3125; 
         end
-        
+        for (; i < 8192; i = i + 1) begin
+            elec_angle = i[11:0];
+            #3125; 
+        end
+        for (; i < 12288; i = i + 1) begin
+            elec_angle = i[11:0];
+            #3125; 
+        end
+        for (; i < 24576; i = i + 1) begin
+            elec_angle = i[11:0];
+            #3125; 
+        end
+                
         $display("Simulation Complete.");
         $finish;
     end

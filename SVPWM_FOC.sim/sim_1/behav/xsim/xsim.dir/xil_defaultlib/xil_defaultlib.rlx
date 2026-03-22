@@ -3,8 +3,8 @@
 Oct 13 2023
 20:47:58
 C:/Users/Dhananjay Dhumal/SVPWM_FOC/SVPWM_FOC.sim/sim_1/behav/xsim/glbl.v,1697210495,verilog,,,,glbl,,,,,,,,
-C:/Users/Dhananjay Dhumal/SVPWM_FOC/SVPWM_FOC.srcs/sim_1/new/tb_SVPWM.v,1774194164,verilog,,,,tb_SVPWM,,,,,,,,
+C:/Users/Dhananjay Dhumal/SVPWM_FOC/SVPWM_FOC.srcs/sim_1/new/tb_freq.v,1774206920,verilog,,,,tb_freq,,,,,,,,
 C:/Users/Dhananjay Dhumal/SVPWM_FOC/SVPWM_FOC.srcs/sources_1/new/SVPWM.v,1774193098,verilog,,C:/Users/Dhananjay Dhumal/SVPWM_FOC/SVPWM_FOC.srcs/sources_1/new/capwm.v,,SVPWM,,,,,,,,
 C:/Users/Dhananjay Dhumal/SVPWM_FOC/SVPWM_FOC.srcs/sources_1/new/capwm.v,1774193700,verilog,,C:/Users/Dhananjay Dhumal/SVPWM_FOC/SVPWM_FOC.srcs/sources_1/new/phase_vector_generator.v,,capwm,,,,,,,,
-C:/Users/Dhananjay Dhumal/SVPWM_FOC/SVPWM_FOC.srcs/sources_1/new/phase_vector_generator.v,1774194667,verilog,,C:/Users/Dhananjay Dhumal/SVPWM_FOC/SVPWM_FOC.srcs/sources_1/new/sine_lut.v,,phase_vector_generator,,,,,,,,
-C:/Users/Dhananjay Dhumal/SVPWM_FOC/SVPWM_FOC.srcs/sources_1/new/sine_lut.v,1774192440,verilog,,C:/Users/Dhananjay Dhumal/SVPWM_FOC/SVPWM_FOC.srcs/sim_1/new/tb_SVPWM.v,,sine_lut,,,,,,,,
+C:/Users/Dhananjay Dhumal/SVPWM_FOC/SVPWM_FOC.srcs/sources_1/new/phase_vector_generator.v,1774204299,verilog,,C:/Users/Dhananjay Dhumal/SVPWM_FOC/SVPWM_FOC.srcs/sources_1/new/sine_lut.v,,phase_vector_generator,,,,,,,,
+C:/Users/Dhananjay Dhumal/SVPWM_FOC/SVPWM_FOC.srcs/sources_1/new/sine_lut.v,1774192440,verilog,,C:/Users/Dhananjay Dhumal/SVPWM_FOC/SVPWM_FOC.srcs/sim_1/new/tb_freq.v,,sine_lut,,,,,,,,

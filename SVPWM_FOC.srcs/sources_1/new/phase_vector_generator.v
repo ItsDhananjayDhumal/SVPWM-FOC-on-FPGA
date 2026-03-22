@@ -51,7 +51,7 @@ always @(posedge clk_50M) begin
         end
         3'd1: begin
             duty_b <= T1 + T2 + dead_time;
-            duty_a <= T1 + dead_time;
+            duty_a <= T2 + dead_time;
             duty_c <= dead_time;
         end    
         3'd2: begin
@@ -61,7 +61,7 @@ always @(posedge clk_50M) begin
         end      
         3'd3: begin
             duty_c <= T1 + T2 + dead_time;
-            duty_b <= T1 + dead_time;
+            duty_b <= T2 + dead_time;
             duty_a <= dead_time;
         end
         3'd4: begin
@@ -71,7 +71,7 @@ always @(posedge clk_50M) begin
         end    
         3'd5: begin
             duty_a <= T1 + T2 + dead_time;
-            duty_c <= T1 + dead_time;
+            duty_c <= T2 + dead_time;
             duty_b <= dead_time;
         end 
         default: begin

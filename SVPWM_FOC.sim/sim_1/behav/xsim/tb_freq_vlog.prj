@@ -4,7 +4,7 @@ verilog xil_defaultlib  \
 "../../../../SVPWM_FOC.srcs/sources_1/new/capwm.v" \
 "../../../../SVPWM_FOC.srcs/sources_1/new/phase_vector_generator.v" \
 "../../../../SVPWM_FOC.srcs/sources_1/new/sine_lut.v" \
-"../../../../SVPWM_FOC.srcs/sim_1/new/tb_SVPWM.v" \
+"../../../../SVPWM_FOC.srcs/sim_1/new/tb_freq.v" \
 
 # compile glbl module
 verilog xil_defaultlib "glbl.v"
