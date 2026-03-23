@@ -5,10 +5,15 @@ module capwm (
     output wire pwm_out // output frequency is 6.1KHz
 );
 
-    localparam MAX_COUNT = 4096;
+    localparam MAX_COUNT = 4095;
 
     reg [11:0] counter;
     reg count_dir;
+
+    initial begin
+        counter <= 0;
+        count_dir <= 1;
+    end
 
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin

@@ -3,75 +3,57 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="tb_freq_behav.wdb" id="1">
+      <db_ref path="tb_deadband_behav.wdb" id="1">
          <top_modules>
             <top_module name="glbl" />
-            <top_module name="tb_freq" />
+            <top_module name="tb_deadband" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000000000 ms"></ZoomStartTime>
-      <ZoomEndTime time="76.800200000 ms"></ZoomEndTime>
-      <Cursor1Time time="9.703330000 ms"></Cursor1Time>
+      <ZoomStartTime time="90.890000 us"></ZoomStartTime>
+      <ZoomEndTime time="420.890001 us"></ZoomEndTime>
+      <Cursor1Time time="577.890000 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="197"></NameColumnWidth>
-      <ValueColumnWidth column_width="152"></ValueColumnWidth>
+      <ValueColumnWidth column_width="146"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="6" />
-   <wvobject fp_name="/tb_freq/uut/inst_pvg/duty_a" type="array">
-      <obj_property name="ElementShortName">duty_a[11:0]</obj_property>
-      <obj_property name="ObjectShortName">duty_a[11:0]</obj_property>
-      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
-      <obj_property name="CellHeight">200</obj_property>
-      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
-      <obj_property name="AnalogYRangeMin">0.000000</obj_property>
-      <obj_property name="AnalogYRRangeMax">0.000000</obj_property>
-      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_LINEAR</obj_property>
-      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
-      <obj_property name="AnalogHorizLine">0.000000</obj_property>
+   <WVObjectSize size="9" />
+   <wvobject fp_name="/tb_deadband/pwm_u_raw" type="logic">
+      <obj_property name="ElementShortName">pwm_u_raw</obj_property>
+      <obj_property name="ObjectShortName">pwm_u_raw</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_freq/uut/inst_pvg/duty_b" type="array">
-      <obj_property name="ElementShortName">duty_b[11:0]</obj_property>
-      <obj_property name="ObjectShortName">duty_b[11:0]</obj_property>
-      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
-      <obj_property name="CellHeight">200</obj_property>
-      <obj_property name="AnalogYRangeMin">0</obj_property>
-      <obj_property name="AnalogYRRangeMax">8001</obj_property>
-      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_LINEAR</obj_property>
-      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
-      <obj_property name="AnalogHorizLine">0.000000</obj_property>
-      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_FIXED</obj_property>
+   <wvobject fp_name="/tb_deadband/pwm_v_raw" type="logic">
+      <obj_property name="ElementShortName">pwm_v_raw</obj_property>
+      <obj_property name="ObjectShortName">pwm_v_raw</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_freq/uut/inst_pvg/duty_c" type="array">
-      <obj_property name="ElementShortName">duty_c[11:0]</obj_property>
-      <obj_property name="ObjectShortName">duty_c[11:0]</obj_property>
-      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
-      <obj_property name="CellHeight">200</obj_property>
-      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
-      <obj_property name="AnalogYRangeMin">0.000000</obj_property>
-      <obj_property name="AnalogYRRangeMax">0.000000</obj_property>
-      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_LINEAR</obj_property>
-      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
-      <obj_property name="AnalogHorizLine">0.000000</obj_property>
+   <wvobject fp_name="/tb_deadband/pwm_w_raw" type="logic">
+      <obj_property name="ElementShortName">pwm_w_raw</obj_property>
+      <obj_property name="ObjectShortName">pwm_w_raw</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_freq/uut/inst_pvg/T1" type="array">
-      <obj_property name="ElementShortName">T1[11:0]</obj_property>
-      <obj_property name="ObjectShortName">T1[11:0]</obj_property>
-      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
-      <obj_property name="CellHeight">100</obj_property>
+   <wvobject fp_name="/tb_deadband/pwm_u_h" type="logic">
+      <obj_property name="ElementShortName">pwm_u_h</obj_property>
+      <obj_property name="ObjectShortName">pwm_u_h</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_freq/uut/inst_pvg/T2" type="array">
-      <obj_property name="ElementShortName">T2[11:0]</obj_property>
-      <obj_property name="ObjectShortName">T2[11:0]</obj_property>
-      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
-      <obj_property name="CellHeight">100</obj_property>
+   <wvobject fp_name="/tb_deadband/pwm_u_l" type="logic">
+      <obj_property name="ElementShortName">pwm_u_l</obj_property>
+      <obj_property name="ObjectShortName">pwm_u_l</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_freq/uut/inst_pvg/dead_time" type="array">
-      <obj_property name="ElementShortName">dead_time[11:0]</obj_property>
-      <obj_property name="ObjectShortName">dead_time[11:0]</obj_property>
-      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
-      <obj_property name="CellHeight">100</obj_property>
+   <wvobject fp_name="/tb_deadband/pwm_v_h" type="logic">
+      <obj_property name="ElementShortName">pwm_v_h</obj_property>
+      <obj_property name="ObjectShortName">pwm_v_h</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_deadband/pwm_v_l" type="logic">
+      <obj_property name="ElementShortName">pwm_v_l</obj_property>
+      <obj_property name="ObjectShortName">pwm_v_l</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_deadband/pwm_w_h" type="logic">
+      <obj_property name="ElementShortName">pwm_w_h</obj_property>
+      <obj_property name="ObjectShortName">pwm_w_h</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_deadband/pwm_w_l" type="logic">
+      <obj_property name="ElementShortName">pwm_w_l</obj_property>
+      <obj_property name="ObjectShortName">pwm_w_l</obj_property>
    </wvobject>
 </wave_config>

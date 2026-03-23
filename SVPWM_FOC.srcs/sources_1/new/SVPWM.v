@@ -5,10 +5,11 @@ module SVPWM(
     input rst_n,
     input wire [11:0] elec_angle,
     input wire [9:0] modulation,
-    output phase_a, phase_b, phase_c
+    output phase_a_plus, phase_b_plus, phase_c_plus, phase_a_minus, phase_b_minus, phase_c_minus 
     );
     
-wire [11:0] duty_a, duty_b, duty_c;    
+wire [11:0] duty_a, duty_b, duty_c; 
+wire phse_a, phase_b, phase_c;   
     
 phase_vector_generator inst_pvg (.clk_50M(clk_50M),
                                  .modulation(modulation),
@@ -31,5 +32,23 @@ capwm phasec (.clk(clk_50M),
               .rst_n(rst_n),
               .duty_cycle(duty_c),
               .pwm_out(phase_c));
+              
+phase_pwm phaseA (.clk(clk_50M),
+                  .rst_n(rst_n),
+                  .pwm_in(phase_a),
+                  .pwm(phase_a_plus),
+                  .com_pwm(phase_a_minus));            
+              
+phase_pwm phaseB (.clk(clk_50M),
+                  .rst_n(rst_n),
+                  .pwm_in(phase_b),
+                  .pwm(phase_b_plus),
+                  .com_pwm(phase_b_minus));
                   
+phase_pwm phaseC (.clk(clk_50M),
+                  .rst_n(rst_n),
+                  .pwm_in(phase_c),
+                  .pwm(phase_c_plus),
+                  .com_pwm(phase_c_minus));
+                      
 endmodule
