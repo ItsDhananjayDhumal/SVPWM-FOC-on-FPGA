@@ -1,0 +1,6 @@
+
+State Machine - |us_md|state
+Name state.STATE_ALIGN state.STATE_RUN state.STATE_WAIT 
+state.STATE_ALIGN 0 0 0 
+state.STATE_WAIT 1 0 1 
+state.STATE_RUN 1 1 0 

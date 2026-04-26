@@ -1,0 +1,73 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "phase_a_plus",
+					"strict" : false
+				},
+				{
+					"name" : "phase_a_minus",
+					"strict" : false
+				},
+				{
+					"name" : "phase_b_plus",
+					"strict" : false
+				},
+				{
+					"name" : "phase_b_minus",
+					"strict" : false
+				},
+				{
+					"name" : "phase_c_plus",
+					"strict" : false
+				},
+				{
+					"name" : "phase_c_minus",
+					"strict" : false
+				},
+				{
+					"name" : "LED[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[1]",
+					"strict" : false
+				},
+				{
+					"name" : "CLOCK_50",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[0]",
+					"strict" : false
+				},
+				{
+					"name" : "enc_a",
+					"strict" : false
+				},
+				{
+					"name" : "enc_b",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tms",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tck",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdi",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdo",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
