@@ -36,11 +36,135 @@
 					"strict" : false
 				},
 				{
+					"name" : "LED[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dig_actual[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dig_actual[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dig_actual[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dig_actual[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_actual[0]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_actual[1]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_actual[2]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_actual[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_actual[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_actual[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_actual[6]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_actual[7]",
+					"strict" : false
+				},
+				{
+					"name" : "dig_target[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dig_target[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dig_target[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dig_target[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_target[0]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_target[1]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_target[2]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_target[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_target[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_target[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_target[6]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_target[7]",
+					"strict" : false
+				},
+				{
 					"name" : "CLOCK_50",
 					"strict" : false
 				},
 				{
 					"name" : "KEY[0]",
+					"strict" : false
+				},
+				{
+					"name" : "angle_btns[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ext_button",
+					"strict" : false
+				},
+				{
+					"name" : "angle_btns[3]",
+					"strict" : false
+				},
+				{
+					"name" : "angle_btns[1]",
+					"strict" : false
+				},
+				{
+					"name" : "angle_btns[2]",
+					"strict" : false
+				},
+				{
+					"name" : "angle_btns[0]",
 					"strict" : false
 				},
 				{

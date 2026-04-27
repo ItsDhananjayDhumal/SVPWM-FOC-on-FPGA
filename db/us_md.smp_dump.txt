@@ -1,6 +1,9 @@
 
 State Machine - |us_md|state
-Name state.STATE_ALIGN state.STATE_RUN state.STATE_WAIT 
-state.STATE_ALIGN 0 0 0 
-state.STATE_WAIT 1 0 1 
-state.STATE_RUN 1 1 0 
+Name state.STATE_RUN_ANGLE state.STATE_RUN_SPEED state.STATE_BEEP3 state.STATE_BEEP2 state.STATE_BEEP1 state.STATE_ALIGN 
+state.STATE_ALIGN 0 0 0 0 0 0 
+state.STATE_BEEP1 0 0 0 0 1 1 
+state.STATE_BEEP2 0 0 0 1 0 1 
+state.STATE_BEEP3 0 0 1 0 0 1 
+state.STATE_RUN_SPEED 0 1 0 0 0 1 
+state.STATE_RUN_ANGLE 1 0 0 0 0 1 

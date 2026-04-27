@@ -1,3 +1,4 @@
 v1
 DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,SVPWM:inst_svpwm|phase_vector_generator:inst_pvg|lpm_mult:Mult1|mult_rct:auto_generated|mac_out2,
 DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,SVPWM:inst_svpwm|phase_vector_generator:inst_pvg|lpm_mult:Mult0|mult_rct:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,lpm_mult:Mult1|mult_r9t:auto_generated|mac_out2,

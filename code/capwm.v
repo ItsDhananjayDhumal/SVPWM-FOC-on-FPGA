@@ -1,8 +1,9 @@
 module capwm (
     input  wire clk,               
     input  wire rst_n,             
-    input  wire [11:0] duty_cycle, // 12 bit resolution
-    output wire pwm_out // output frequency is 6.1KHz
+    input  wire en,                // NEW: Enable signal for acoustic chopping
+    input  wire [11:0] duty_cycle, 
+    output wire pwm_out 
 );
 
     localparam MAX_COUNT = 4095;
@@ -42,6 +43,7 @@ module capwm (
     wire [11:0] safe_duty;
     assign safe_duty = (duty_cycle > MAX_COUNT) ? MAX_COUNT[11:0] : duty_cycle;
 
-    assign pwm_out = (safe_duty > counter);
+    // Modulate the output with the enable signal
+    assign pwm_out = en ? (safe_duty > counter) : 1'b0;
 
 endmodule
