@@ -1,0 +1,782 @@
+Analysis & Synthesis report for us_md
+Mon Apr 27 17:12:20 2026
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. State Machine - |us_md|state
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: Top-level Entity: |us_md
+ 16. Parameter Settings for User Entity Instance: SVPWM:inst_svpwm|phase_pwm:phaseA
+ 17. Parameter Settings for User Entity Instance: SVPWM:inst_svpwm|phase_pwm:phaseB
+ 18. Parameter Settings for User Entity Instance: SVPWM:inst_svpwm|phase_pwm:phaseC
+ 19. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 20. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
+ 21. Port Connectivity Checks: "SVPWM:inst_svpwm|phase_vector_generator:inst_pvg|sine_lut:lut1"
+ 22. Post-Synthesis Netlist Statistics for Top Partition
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
+ 25. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon Apr 27 17:12:20 2026       ;
+; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                   ; us_md                                       ;
+; Top-level Entity Name           ; us_md                                       ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 714                                         ;
+; Total pins                      ; 50                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 5                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
+; Top-level entity name                                                           ; us_md              ; us_md              ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 14          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 14          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
+;     Processors 9-14        ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; code/us_md.v                     ; yes             ; User Verilog HDL File        ; C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v                       ;         ;
+; code/SVPWM.v                     ; yes             ; User Verilog HDL File        ; C:/Users/Dhananjay Dhumal/Desktop/us_md/code/SVPWM.v                       ;         ;
+; code/sine_lut.v                  ; yes             ; User Verilog HDL File        ; C:/Users/Dhananjay Dhumal/Desktop/us_md/code/sine_lut.v                    ;         ;
+; code/seven_seg_rpm_display.v     ; yes             ; User Verilog HDL File        ; C:/Users/Dhananjay Dhumal/Desktop/us_md/code/seven_seg_rpm_display.v       ;         ;
+; code/phase_vector_generator.v    ; yes             ; User Verilog HDL File        ; C:/Users/Dhananjay Dhumal/Desktop/us_md/code/phase_vector_generator.v      ;         ;
+; code/phase_pwm.v                 ; yes             ; User Verilog HDL File        ; C:/Users/Dhananjay Dhumal/Desktop/us_md/code/phase_pwm.v                   ;         ;
+; code/capwm.v                     ; yes             ; User Verilog HDL File        ; C:/Users/Dhananjay Dhumal/Desktop/us_md/code/capwm.v                       ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal201.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc      ;         ;
+; db/lpm_divide_kbm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Dhananjay Dhumal/Desktop/us_md/db/lpm_divide_kbm.tdf              ;         ;
+; db/sign_div_unsign_qlh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/Dhananjay Dhumal/Desktop/us_md/db/sign_div_unsign_qlh.tdf         ;         ;
+; db/alt_u_div_87f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Dhananjay Dhumal/Desktop/us_md/db/alt_u_div_87f.tdf               ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Dhananjay Dhumal/Desktop/us_md/db/add_sub_7pc.tdf                 ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Dhananjay Dhumal/Desktop/us_md/db/add_sub_8pc.tdf                 ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 1867           ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 3034           ;
+;     -- 7 input functions                    ; 127            ;
+;     -- 6 input functions                    ; 560            ;
+;     -- 5 input functions                    ; 421            ;
+;     -- 4 input functions                    ; 404            ;
+;     -- <=3 input functions                  ; 1522           ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 714            ;
+;                                             ;                ;
+; I/O pins                                    ; 50             ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 5              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 714            ;
+; Total fan-out                               ; 14484          ;
+; Average fan-out                             ; 3.76           ;
++---------------------------------------------+----------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                     ;
++-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------+------------------------+--------------+
+; Compilation Hierarchy Node                    ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                    ; Entity Name            ; Library Name ;
++-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------+------------------------+--------------+
+; |us_md                                        ; 3034 (1365)         ; 714 (550)                 ; 0                 ; 5          ; 50   ; 0            ; |us_md                                                                                                 ; us_md                  ; work         ;
+;    |SVPWM:inst_svpwm|                         ; 890 (0)             ; 94 (0)                    ; 0                 ; 2          ; 0    ; 0            ; |us_md|SVPWM:inst_svpwm                                                                                ; SVPWM                  ; work         ;
+;       |capwm:phasea|                          ; 28 (28)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |us_md|SVPWM:inst_svpwm|capwm:phasea                                                                   ; capwm                  ; work         ;
+;       |capwm:phaseb|                          ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |us_md|SVPWM:inst_svpwm|capwm:phaseb                                                                   ; capwm                  ; work         ;
+;       |capwm:phasec|                          ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |us_md|SVPWM:inst_svpwm|capwm:phasec                                                                   ; capwm                  ; work         ;
+;       |phase_pwm:phaseA|                      ; 18 (18)             ; 15 (15)                   ; 0                 ; 0          ; 0    ; 0            ; |us_md|SVPWM:inst_svpwm|phase_pwm:phaseA                                                               ; phase_pwm              ; work         ;
+;       |phase_pwm:phaseB|                      ; 18 (18)             ; 15 (15)                   ; 0                 ; 0          ; 0    ; 0            ; |us_md|SVPWM:inst_svpwm|phase_pwm:phaseB                                                               ; phase_pwm              ; work         ;
+;       |phase_pwm:phaseC|                      ; 18 (18)             ; 15 (15)                   ; 0                 ; 0          ; 0    ; 0            ; |us_md|SVPWM:inst_svpwm|phase_pwm:phaseC                                                               ; phase_pwm              ; work         ;
+;       |phase_vector_generator:inst_pvg|       ; 790 (120)           ; 36 (36)                   ; 0                 ; 2          ; 0    ; 0            ; |us_md|SVPWM:inst_svpwm|phase_vector_generator:inst_pvg                                                ; phase_vector_generator ; work         ;
+;          |sine_lut:lut1|                      ; 324 (324)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |us_md|SVPWM:inst_svpwm|phase_vector_generator:inst_pvg|sine_lut:lut1                                  ; sine_lut               ; work         ;
+;          |sine_lut:lut2|                      ; 346 (346)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |us_md|SVPWM:inst_svpwm|phase_vector_generator:inst_pvg|sine_lut:lut2                                  ; sine_lut               ; work         ;
+;    |lpm_divide:Div0|                          ; 286 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |us_md|lpm_divide:Div0                                                                                 ; lpm_divide             ; work         ;
+;       |lpm_divide_kbm:auto_generated|         ; 286 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |us_md|lpm_divide:Div0|lpm_divide_kbm:auto_generated                                                   ; lpm_divide_kbm         ; work         ;
+;          |sign_div_unsign_qlh:divider|        ; 286 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |us_md|lpm_divide:Div0|lpm_divide_kbm:auto_generated|sign_div_unsign_qlh:divider                       ; sign_div_unsign_qlh    ; work         ;
+;             |alt_u_div_87f:divider|           ; 286 (286)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |us_md|lpm_divide:Div0|lpm_divide_kbm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider ; alt_u_div_87f          ; work         ;
+;    |lpm_divide:Div1|                          ; 277 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |us_md|lpm_divide:Div1                                                                                 ; lpm_divide             ; work         ;
+;       |lpm_divide_kbm:auto_generated|         ; 277 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |us_md|lpm_divide:Div1|lpm_divide_kbm:auto_generated                                                   ; lpm_divide_kbm         ; work         ;
+;          |sign_div_unsign_qlh:divider|        ; 277 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |us_md|lpm_divide:Div1|lpm_divide_kbm:auto_generated|sign_div_unsign_qlh:divider                       ; sign_div_unsign_qlh    ; work         ;
+;             |alt_u_div_87f:divider|           ; 277 (277)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |us_md|lpm_divide:Div1|lpm_divide_kbm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider ; alt_u_div_87f          ; work         ;
+;    |seven_seg_rpm_driver:inst_actual_display| ; 137 (137)           ; 56 (56)                   ; 0                 ; 0          ; 0    ; 0            ; |us_md|seven_seg_rpm_driver:inst_actual_display                                                        ; seven_seg_rpm_driver   ; work         ;
+;    |seven_seg_rpm_driver:inst_target_display| ; 79 (79)             ; 14 (14)                   ; 0                 ; 0          ; 0    ; 0            ; |us_md|seven_seg_rpm_driver:inst_target_display                                                        ; seven_seg_rpm_driver   ; work         ;
++-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------+------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary    ;
++-----------------------------------+-------------+
+; Statistic                         ; Number Used ;
++-----------------------------------+-------------+
+; Two Independent 18x18             ; 4           ;
+; Independent 18x18 plus 36         ; 1           ;
+; Total number of DSP blocks        ; 5           ;
+;                                   ;             ;
+; Fixed Point Unsigned Multiplier   ; 4           ;
+; Fixed Point Mixed Sign Multiplier ; 1           ;
++-----------------------------------+-------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |us_md|state                                                                                                                          ;
++-----------------------+-----------------------+-----------------------+-------------------+-------------------+-------------------+-------------------+
+; Name                  ; state.STATE_RUN_ANGLE ; state.STATE_RUN_SPEED ; state.STATE_BEEP3 ; state.STATE_BEEP2 ; state.STATE_BEEP1 ; state.STATE_ALIGN ;
++-----------------------+-----------------------+-----------------------+-------------------+-------------------+-------------------+-------------------+
+; state.STATE_ALIGN     ; 0                     ; 0                     ; 0                 ; 0                 ; 0                 ; 0                 ;
+; state.STATE_BEEP1     ; 0                     ; 0                     ; 0                 ; 0                 ; 1                 ; 1                 ;
+; state.STATE_BEEP2     ; 0                     ; 0                     ; 0                 ; 1                 ; 0                 ; 1                 ;
+; state.STATE_BEEP3     ; 0                     ; 0                     ; 1                 ; 0                 ; 0                 ; 1                 ;
+; state.STATE_RUN_SPEED ; 0                     ; 1                     ; 0                 ; 0                 ; 0                 ; 1                 ;
+; state.STATE_RUN_ANGLE ; 1                     ; 0                     ; 0                 ; 0                 ; 0                 ; 1                 ;
++-----------------------+-----------------------+-----------------------+-------------------+-------------------+-------------------+-------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                      ;
++--------------------------------------------------------------+--------------------------------------------------------------------------+
+; Register name                                                ; Reason for Removal                                                       ;
++--------------------------------------------------------------+--------------------------------------------------------------------------+
+; seven_seg_rpm_driver:inst_target_display|digit_idx[1]        ; Merged with seven_seg_rpm_driver:inst_actual_display|digit_idx[1]        ;
+; seven_seg_rpm_driver:inst_target_display|digit_idx[0]        ; Merged with seven_seg_rpm_driver:inst_actual_display|digit_idx[0]        ;
+; SVPWM:inst_svpwm|capwm:phaseb|counter[11]                    ; Merged with SVPWM:inst_svpwm|capwm:phasea|counter[11]                    ;
+; SVPWM:inst_svpwm|capwm:phasec|counter[11]                    ; Merged with SVPWM:inst_svpwm|capwm:phasea|counter[11]                    ;
+; SVPWM:inst_svpwm|capwm:phaseb|counter[10]                    ; Merged with SVPWM:inst_svpwm|capwm:phasea|counter[10]                    ;
+; SVPWM:inst_svpwm|capwm:phasec|counter[10]                    ; Merged with SVPWM:inst_svpwm|capwm:phasea|counter[10]                    ;
+; SVPWM:inst_svpwm|capwm:phaseb|counter[9]                     ; Merged with SVPWM:inst_svpwm|capwm:phasea|counter[9]                     ;
+; SVPWM:inst_svpwm|capwm:phasec|counter[9]                     ; Merged with SVPWM:inst_svpwm|capwm:phasea|counter[9]                     ;
+; SVPWM:inst_svpwm|capwm:phaseb|counter[8]                     ; Merged with SVPWM:inst_svpwm|capwm:phasea|counter[8]                     ;
+; SVPWM:inst_svpwm|capwm:phasec|counter[8]                     ; Merged with SVPWM:inst_svpwm|capwm:phasea|counter[8]                     ;
+; SVPWM:inst_svpwm|capwm:phaseb|counter[7]                     ; Merged with SVPWM:inst_svpwm|capwm:phasea|counter[7]                     ;
+; SVPWM:inst_svpwm|capwm:phasec|counter[7]                     ; Merged with SVPWM:inst_svpwm|capwm:phasea|counter[7]                     ;
+; SVPWM:inst_svpwm|capwm:phaseb|counter[6]                     ; Merged with SVPWM:inst_svpwm|capwm:phasea|counter[6]                     ;
+; SVPWM:inst_svpwm|capwm:phasec|counter[6]                     ; Merged with SVPWM:inst_svpwm|capwm:phasea|counter[6]                     ;
+; SVPWM:inst_svpwm|capwm:phaseb|counter[5]                     ; Merged with SVPWM:inst_svpwm|capwm:phasea|counter[5]                     ;
+; SVPWM:inst_svpwm|capwm:phasec|counter[5]                     ; Merged with SVPWM:inst_svpwm|capwm:phasea|counter[5]                     ;
+; SVPWM:inst_svpwm|capwm:phaseb|counter[4]                     ; Merged with SVPWM:inst_svpwm|capwm:phasea|counter[4]                     ;
+; SVPWM:inst_svpwm|capwm:phasec|counter[4]                     ; Merged with SVPWM:inst_svpwm|capwm:phasea|counter[4]                     ;
+; SVPWM:inst_svpwm|capwm:phaseb|counter[3]                     ; Merged with SVPWM:inst_svpwm|capwm:phasea|counter[3]                     ;
+; SVPWM:inst_svpwm|capwm:phasec|counter[3]                     ; Merged with SVPWM:inst_svpwm|capwm:phasea|counter[3]                     ;
+; SVPWM:inst_svpwm|capwm:phaseb|counter[2]                     ; Merged with SVPWM:inst_svpwm|capwm:phasea|counter[2]                     ;
+; SVPWM:inst_svpwm|capwm:phasec|counter[2]                     ; Merged with SVPWM:inst_svpwm|capwm:phasea|counter[2]                     ;
+; SVPWM:inst_svpwm|capwm:phaseb|counter[1]                     ; Merged with SVPWM:inst_svpwm|capwm:phasea|counter[1]                     ;
+; SVPWM:inst_svpwm|capwm:phasec|counter[1]                     ; Merged with SVPWM:inst_svpwm|capwm:phasea|counter[1]                     ;
+; SVPWM:inst_svpwm|capwm:phaseb|counter[0]                     ; Merged with SVPWM:inst_svpwm|capwm:phasea|counter[0]                     ;
+; SVPWM:inst_svpwm|capwm:phasec|counter[0]                     ; Merged with SVPWM:inst_svpwm|capwm:phasea|counter[0]                     ;
+; seven_seg_rpm_driver:inst_target_display|refresh_counter[15] ; Merged with seven_seg_rpm_driver:inst_actual_display|refresh_counter[15] ;
+; seven_seg_rpm_driver:inst_target_display|refresh_counter[14] ; Merged with seven_seg_rpm_driver:inst_actual_display|refresh_counter[14] ;
+; seven_seg_rpm_driver:inst_target_display|refresh_counter[13] ; Merged with seven_seg_rpm_driver:inst_actual_display|refresh_counter[13] ;
+; seven_seg_rpm_driver:inst_target_display|refresh_counter[12] ; Merged with seven_seg_rpm_driver:inst_actual_display|refresh_counter[12] ;
+; seven_seg_rpm_driver:inst_target_display|refresh_counter[11] ; Merged with seven_seg_rpm_driver:inst_actual_display|refresh_counter[11] ;
+; seven_seg_rpm_driver:inst_target_display|refresh_counter[10] ; Merged with seven_seg_rpm_driver:inst_actual_display|refresh_counter[10] ;
+; seven_seg_rpm_driver:inst_target_display|refresh_counter[9]  ; Merged with seven_seg_rpm_driver:inst_actual_display|refresh_counter[9]  ;
+; seven_seg_rpm_driver:inst_target_display|refresh_counter[8]  ; Merged with seven_seg_rpm_driver:inst_actual_display|refresh_counter[8]  ;
+; seven_seg_rpm_driver:inst_target_display|refresh_counter[7]  ; Merged with seven_seg_rpm_driver:inst_actual_display|refresh_counter[7]  ;
+; seven_seg_rpm_driver:inst_target_display|refresh_counter[6]  ; Merged with seven_seg_rpm_driver:inst_actual_display|refresh_counter[6]  ;
+; seven_seg_rpm_driver:inst_target_display|refresh_counter[5]  ; Merged with seven_seg_rpm_driver:inst_actual_display|refresh_counter[5]  ;
+; seven_seg_rpm_driver:inst_target_display|refresh_counter[4]  ; Merged with seven_seg_rpm_driver:inst_actual_display|refresh_counter[4]  ;
+; seven_seg_rpm_driver:inst_target_display|refresh_counter[3]  ; Merged with seven_seg_rpm_driver:inst_actual_display|refresh_counter[3]  ;
+; seven_seg_rpm_driver:inst_target_display|refresh_counter[2]  ; Merged with seven_seg_rpm_driver:inst_actual_display|refresh_counter[2]  ;
+; seven_seg_rpm_driver:inst_target_display|refresh_counter[1]  ; Merged with seven_seg_rpm_driver:inst_actual_display|refresh_counter[1]  ;
+; seven_seg_rpm_driver:inst_target_display|refresh_counter[0]  ; Merged with seven_seg_rpm_driver:inst_actual_display|refresh_counter[0]  ;
+; seven_seg_rpm_driver:inst_target_display|ui_timer[23]        ; Merged with seven_seg_rpm_driver:inst_actual_display|ui_timer[23]        ;
+; seven_seg_rpm_driver:inst_target_display|ui_timer[22]        ; Merged with seven_seg_rpm_driver:inst_actual_display|ui_timer[22]        ;
+; seven_seg_rpm_driver:inst_target_display|ui_timer[21]        ; Merged with seven_seg_rpm_driver:inst_actual_display|ui_timer[21]        ;
+; seven_seg_rpm_driver:inst_target_display|ui_timer[20]        ; Merged with seven_seg_rpm_driver:inst_actual_display|ui_timer[20]        ;
+; seven_seg_rpm_driver:inst_target_display|ui_timer[19]        ; Merged with seven_seg_rpm_driver:inst_actual_display|ui_timer[19]        ;
+; seven_seg_rpm_driver:inst_target_display|ui_timer[18]        ; Merged with seven_seg_rpm_driver:inst_actual_display|ui_timer[18]        ;
+; seven_seg_rpm_driver:inst_target_display|ui_timer[17]        ; Merged with seven_seg_rpm_driver:inst_actual_display|ui_timer[17]        ;
+; seven_seg_rpm_driver:inst_target_display|ui_timer[16]        ; Merged with seven_seg_rpm_driver:inst_actual_display|ui_timer[16]        ;
+; seven_seg_rpm_driver:inst_target_display|ui_timer[15]        ; Merged with seven_seg_rpm_driver:inst_actual_display|ui_timer[15]        ;
+; seven_seg_rpm_driver:inst_target_display|ui_timer[14]        ; Merged with seven_seg_rpm_driver:inst_actual_display|ui_timer[14]        ;
+; seven_seg_rpm_driver:inst_target_display|ui_timer[13]        ; Merged with seven_seg_rpm_driver:inst_actual_display|ui_timer[13]        ;
+; seven_seg_rpm_driver:inst_target_display|ui_timer[12]        ; Merged with seven_seg_rpm_driver:inst_actual_display|ui_timer[12]        ;
+; seven_seg_rpm_driver:inst_target_display|ui_timer[11]        ; Merged with seven_seg_rpm_driver:inst_actual_display|ui_timer[11]        ;
+; seven_seg_rpm_driver:inst_target_display|ui_timer[10]        ; Merged with seven_seg_rpm_driver:inst_actual_display|ui_timer[10]        ;
+; seven_seg_rpm_driver:inst_target_display|ui_timer[9]         ; Merged with seven_seg_rpm_driver:inst_actual_display|ui_timer[9]         ;
+; seven_seg_rpm_driver:inst_target_display|ui_timer[8]         ; Merged with seven_seg_rpm_driver:inst_actual_display|ui_timer[8]         ;
+; seven_seg_rpm_driver:inst_target_display|ui_timer[7]         ; Merged with seven_seg_rpm_driver:inst_actual_display|ui_timer[7]         ;
+; seven_seg_rpm_driver:inst_target_display|ui_timer[6]         ; Merged with seven_seg_rpm_driver:inst_actual_display|ui_timer[6]         ;
+; seven_seg_rpm_driver:inst_target_display|ui_timer[5]         ; Merged with seven_seg_rpm_driver:inst_actual_display|ui_timer[5]         ;
+; seven_seg_rpm_driver:inst_target_display|ui_timer[4]         ; Merged with seven_seg_rpm_driver:inst_actual_display|ui_timer[4]         ;
+; seven_seg_rpm_driver:inst_target_display|ui_timer[3]         ; Merged with seven_seg_rpm_driver:inst_actual_display|ui_timer[3]         ;
+; seven_seg_rpm_driver:inst_target_display|ui_timer[2]         ; Merged with seven_seg_rpm_driver:inst_actual_display|ui_timer[2]         ;
+; seven_seg_rpm_driver:inst_target_display|ui_timer[1]         ; Merged with seven_seg_rpm_driver:inst_actual_display|ui_timer[1]         ;
+; seven_seg_rpm_driver:inst_target_display|ui_timer[0]         ; Merged with seven_seg_rpm_driver:inst_actual_display|ui_timer[0]         ;
+; target_offset[1,4,5,13..15]                                  ; Merged with target_offset[0]                                             ;
+; target_offset[3]                                             ; Merged with target_offset[12]                                            ;
+; target_offset[2,6]                                           ; Merged with target_offset[11]                                            ;
+; SVPWM:inst_svpwm|capwm:phaseb|count_dir                      ; Merged with SVPWM:inst_svpwm|capwm:phasea|count_dir                      ;
+; SVPWM:inst_svpwm|capwm:phasec|count_dir                      ; Merged with SVPWM:inst_svpwm|capwm:phasea|count_dir                      ;
+; pid_modulation_out[24..31]                                   ; Merged with pid_modulation_out[23]                                       ;
+; integral_error_spd[0]                                        ; Stuck at GND due to stuck port data_in                                   ;
+; target_offset[0]                                             ; Stuck at GND due to stuck port data_in                                   ;
+; integral_error_spd[31]                                       ; Stuck at GND due to stuck port data_in                                   ;
+; pid_modulation_out[10..22]                                   ; Lost fanout                                                              ;
+; integral_error_spd[27..30]                                   ; Stuck at GND due to stuck port data_in                                   ;
+; state~2                                                      ; Lost fanout                                                              ;
+; state~3                                                      ; Lost fanout                                                              ;
+; state~4                                                      ; Lost fanout                                                              ;
+; integral_error_pos[30,31]                                    ; Merged with integral_error_pos[29]                                       ;
+; integral_error_spd[17..26]                                   ; Stuck at GND due to stuck port data_in                                   ;
+; Total Number of Removed Registers = 120                      ;                                                                          ;
++--------------------------------------------------------------+--------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                 ;
++-----------------------+---------------------------+-------------------------------------------------------------------------+
+; Register name         ; Reason for Removal        ; Registers Removed due to This Register                                  ;
++-----------------------+---------------------------+-------------------------------------------------------------------------+
+; integral_error_spd[0] ; Stuck at GND              ; integral_error_spd[31], integral_error_spd[30], integral_error_spd[27], ;
+;                       ; due to stuck port data_in ; integral_error_spd[17], integral_error_spd[18], integral_error_spd[19], ;
+;                       ;                           ; integral_error_spd[20], integral_error_spd[21], integral_error_spd[22], ;
+;                       ;                           ; integral_error_spd[23], integral_error_spd[24], integral_error_spd[25], ;
+;                       ;                           ; integral_error_spd[26]                                                  ;
++-----------------------+---------------------------+-------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 714   ;
+; Number of registers using Synchronous Clear  ; 661   ;
+; Number of registers using Synchronous Load   ; 11    ;
+; Number of registers using Asynchronous Clear ; 58    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 311   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; btn_state[4]                            ; 25      ;
+; beep_state                              ; 7       ;
+; mode_state                              ; 9       ;
+; mode_state_prev                         ; 6       ;
+; target_speed_ticks[3]                   ; 9       ;
+; target_speed_ticks[6]                   ; 8       ;
+; target_speed_ticks[7]                   ; 8       ;
+; SVPWM:inst_svpwm|capwm:phasea|count_dir ; 12      ;
+; btn_state[2]                            ; 4       ;
+; btn_state_prev[2]                       ; 1       ;
+; btn_state[1]                            ; 4       ;
+; btn_state_prev[1]                       ; 1       ;
+; btn_state[3]                            ; 5       ;
+; btn_state_prev[3]                       ; 2       ;
+; btn_state[0]                            ; 5       ;
+; btn_state_prev[0]                       ; 2       ;
+; btn_state_prev[4]                       ; 3       ;
+; Total number of inverted registers = 17 ;         ;
++-----------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
+; 3:1                ; 12 bits   ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |us_md|SVPWM:inst_svpwm|phase_pwm:phaseA|counter[4]                ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |us_md|SVPWM:inst_svpwm|phase_pwm:phaseA|com_pwm                   ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |us_md|SVPWM:inst_svpwm|phase_pwm:phaseB|counter[10]               ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |us_md|SVPWM:inst_svpwm|phase_pwm:phaseB|pwm                       ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |us_md|SVPWM:inst_svpwm|phase_pwm:phaseC|counter[8]                ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |us_md|SVPWM:inst_svpwm|phase_pwm:phaseC|pwm                       ;
+; 4:1                ; 33 bits   ; 66 LEs        ; 66 LEs               ; 0 LEs                  ; Yes        ; |us_md|SVPWM:inst_svpwm|phase_vector_generator:inst_pvg|duty_a[2]  ;
+; 3:1                ; 48 bits   ; 96 LEs        ; 0 LEs                ; 96 LEs                 ; Yes        ; |us_md|actual_speed[1]                                             ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |us_md|mech_zero_offset[3]                                         ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |us_md|foc_offset_angle[6]                                         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |us_md|seven_seg_rpm_driver:inst_actual_display|digit_idx[0]       ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |us_md|seven_seg_rpm_driver:inst_actual_display|refresh_counter[5] ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |us_md|seven_seg_rpm_driver:inst_actual_display|ui_timer[2]        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |us_md|mode_counter[17]                                            ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |us_md|beep_timer[9]                                               ;
+; 4:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |us_md|seven_seg_rpm_driver:inst_actual_display|latched_val[12]    ;
+; 4:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |us_md|seven_seg_rpm_driver:inst_target_display|latched_val[1]     ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 0 LEs                ; 62 LEs                 ; Yes        ; |us_md|integral_error_pos[3]                                       ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |us_md|ramp_timer[15]                                              ;
+; 4:1                ; 30 bits   ; 60 LEs        ; 0 LEs                ; 60 LEs                 ; Yes        ; |us_md|integral_error_spd[24]                                      ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |us_md|btn_counters[4][27]                                         ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |us_md|btn_counters[2][3]                                          ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |us_md|btn_counters[3][0]                                          ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |us_md|btn_counters[0][4]                                          ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |us_md|btn_counters[1][15]                                         ;
+; 5:1                ; 11 bits   ; 33 LEs        ; 11 LEs               ; 22 LEs                 ; Yes        ; |us_md|pid_modulation_out[0]                                       ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |us_md|pi_modulation_out[0]                                        ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |us_md|count[8]                                                    ;
+; 7:1                ; 12 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |us_md|target_speed_ticks[12]                                      ;
+; 7:1                ; 16 bits   ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |us_md|current_target_speed[15]                                    ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |us_md|svpwm_mod_cmd[3]                                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |us_md|target_offset[8]                                            ;
+; 9:1                ; 32 bits   ; 192 LEs       ; 0 LEs                ; 192 LEs                ; Yes        ; |us_md|fsm_timer[20]                                               ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; Yes        ; |us_md|target_speed_ticks[7]                                       ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |us_md|seven_seg_rpm_driver:inst_target_display|Mux4               ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |us_md|raw_speed                                                   ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |us_md|error                                                       ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |us_md|next_int                                                    ;
+; 3:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |us_md|next_integral                                               ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |us_md|svpwm_mod_cmd                                               ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |us_md|seven_seg_rpm_driver:inst_actual_display|Mux2               ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |us_md|seven_seg_rpm_driver:inst_target_display|Mux2               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |us_md   ;
++--------------------+----------------------------------+-----------------+
+; Parameter Name     ; Value                            ; Type            ;
++--------------------+----------------------------------+-----------------+
+; PPR                ; 10000                            ; Signed Integer  ;
+; POLE_PAIRS         ; 7                                ; Signed Integer  ;
+; CLOCK_FREQ         ; 50000000                         ; Signed Integer  ;
+; ALIGN_MODULATION   ; 0011001000                       ; Unsigned Binary ;
+; ALIGN_PERIOD_MS    ; 00000000000000000000001111101000 ; Unsigned Binary ;
+; ALIGN_PULSE_MS     ; 00000000000000000000000100101100 ; Unsigned Binary ;
+; ALIGN_BEEP_FREQ    ; 00000000000000000000001111101000 ; Unsigned Binary ;
+; DEBOUNCE_MS        ; 00000000000000000000000000010100 ; Unsigned Binary ;
+; DT_CYCLES          ; 50000                            ; Signed Integer  ;
+; GAIN_SHIFT         ; 1000                             ; Unsigned Binary ;
+; SPD_KP_GAIN        ; 00000000000000000000011111010000 ; Unsigned Binary ;
+; SPD_KI_GAIN        ; 00000000000000000000000000001010 ; Unsigned Binary ;
+; MAX_SPD_MODULATION ; 400                              ; Signed Integer  ;
+; SPEED_RAMP_MS      ; 0000000000000101                 ; Unsigned Binary ;
+; POS_KP_GAIN        ; 00000000000000000000000001010000 ; Unsigned Binary ;
+; POS_KI_GAIN        ; 00000000000000000000000000000001 ; Unsigned Binary ;
+; POS_KD_GAIN        ; 00000000000000000000000000011110 ; Unsigned Binary ;
+; MAX_POS_MODULATION ; 250                              ; Signed Integer  ;
++--------------------+----------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SVPWM:inst_svpwm|phase_pwm:phaseA ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; DEADBAND       ; 2     ; Signed Integer                                        ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SVPWM:inst_svpwm|phase_pwm:phaseB ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; DEADBAND       ; 2     ; Signed Integer                                        ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SVPWM:inst_svpwm|phase_pwm:phaseC ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; DEADBAND       ; 2     ; Signed Integer                                        ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 22             ; Untyped                ;
+; LPM_WIDTHD             ; 7              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_kbm ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 22             ; Untyped                ;
+; LPM_WIDTHD             ; 7              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_kbm ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SVPWM:inst_svpwm|phase_vector_generator:inst_pvg|sine_lut:lut1" ;
++----------+-------+----------+--------------------------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                                      ;
++----------+-------+----------+--------------------------------------------------------------+
+; angle[0] ; Input ; Info     ; Stuck at GND                                                 ;
++----------+-------+----------+--------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 714                         ;
+;     CLR               ; 22                          ;
+;     ENA               ; 5                           ;
+;     ENA CLR SCLR      ; 36                          ;
+;     ENA SCLR          ; 259                         ;
+;     ENA SCLR SLD      ; 11                          ;
+;     SCLR              ; 355                         ;
+;     plain             ; 26                          ;
+; arriav_lcell_comb     ; 3052                        ;
+;     arith             ; 1231                        ;
+;         0 data inputs ; 74                          ;
+;         1 data inputs ; 585                         ;
+;         2 data inputs ; 181                         ;
+;         3 data inputs ; 110                         ;
+;         4 data inputs ; 132                         ;
+;         5 data inputs ; 149                         ;
+;     extend            ; 127                         ;
+;         7 data inputs ; 127                         ;
+;     normal            ; 1549                        ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 24                          ;
+;         2 data inputs ; 244                         ;
+;         3 data inputs ; 176                         ;
+;         4 data inputs ; 272                         ;
+;         5 data inputs ; 272                         ;
+;         6 data inputs ; 560                         ;
+;     shared            ; 145                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 28                          ;
+;         2 data inputs ; 87                          ;
+;         3 data inputs ; 28                          ;
+; arriav_mac            ; 5                           ;
+; boundary_port         ; 50                          ;
+;                       ;                             ;
+; Max LUT depth         ; 38.30                       ;
+; Average LUT depth     ; 13.83                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:06     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Mon Apr 27 17:12:07 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off us_md -c us_md
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file code/us_md.v
+    Info (12023): Found entity 1: us_md File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file code/svpwm.v
+    Info (12023): Found entity 1: SVPWM File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/SVPWM.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file code/sine_lut.v
+    Info (12023): Found entity 1: sine_lut File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/sine_lut.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file code/seven_seg_rpm_display.v
+    Info (12023): Found entity 1: seven_seg_rpm_driver File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/seven_seg_rpm_display.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file code/phase_vector_generator.v
+    Info (12023): Found entity 1: phase_vector_generator File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/phase_vector_generator.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file code/phase_pwm.v
+    Info (12023): Found entity 1: phase_pwm File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/phase_pwm.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file code/capwm.v
+    Info (12023): Found entity 1: capwm File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/capwm.v Line: 1
+Info (12127): Elaborating entity "us_md" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at us_md.v(117): truncated value with size 32 to match size of target (16) File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 117
+Warning (10230): Verilog HDL assignment warning at us_md.v(118): truncated value with size 32 to match size of target (16) File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 118
+Warning (10230): Verilog HDL assignment warning at us_md.v(119): truncated value with size 32 to match size of target (16) File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 119
+Warning (10230): Verilog HDL assignment warning at us_md.v(120): truncated value with size 32 to match size of target (16) File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 120
+Warning (10230): Verilog HDL assignment warning at us_md.v(128): truncated value with size 32 to match size of target (16) File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 128
+Warning (10230): Verilog HDL assignment warning at us_md.v(129): truncated value with size 32 to match size of target (16) File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 129
+Warning (10230): Verilog HDL assignment warning at us_md.v(130): truncated value with size 32 to match size of target (16) File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 130
+Warning (10230): Verilog HDL assignment warning at us_md.v(153): truncated value with size 32 to match size of target (16) File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 153
+Warning (10230): Verilog HDL assignment warning at us_md.v(155): truncated value with size 32 to match size of target (16) File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 155
+Info (10264): Verilog HDL Case Statement information at us_md.v(180): all case item expressions in this case statement are onehot File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 180
+Warning (10230): Verilog HDL assignment warning at us_md.v(209): truncated value with size 32 to match size of target (16) File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 209
+Warning (10230): Verilog HDL assignment warning at us_md.v(229): truncated value with size 32 to match size of target (16) File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 229
+Warning (10230): Verilog HDL assignment warning at us_md.v(230): truncated value with size 32 to match size of target (16) File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 230
+Warning (10230): Verilog HDL assignment warning at us_md.v(231): truncated value with size 17 to match size of target (16) File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 231
+Warning (10230): Verilog HDL assignment warning at us_md.v(234): truncated value with size 32 to match size of target (16) File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 234
+Warning (10230): Verilog HDL assignment warning at us_md.v(240): truncated value with size 32 to match size of target (16) File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 240
+Warning (10230): Verilog HDL assignment warning at us_md.v(241): truncated value with size 32 to match size of target (16) File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 241
+Warning (10230): Verilog HDL assignment warning at us_md.v(242): truncated value with size 32 to match size of target (16) File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 242
+Warning (10230): Verilog HDL assignment warning at us_md.v(271): truncated value with size 32 to match size of target (16) File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 271
+Warning (10230): Verilog HDL assignment warning at us_md.v(298): truncated value with size 32 to match size of target (12) File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 298
+Warning (10230): Verilog HDL assignment warning at us_md.v(364): truncated value with size 32 to match size of target (16) File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 364
+Warning (10230): Verilog HDL assignment warning at us_md.v(365): truncated value with size 32 to match size of target (16) File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 365
+Warning (10230): Verilog HDL assignment warning at us_md.v(366): truncated value with size 32 to match size of target (16) File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 366
+Info (12128): Elaborating entity "SVPWM" for hierarchy "SVPWM:inst_svpwm" File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 354
+Info (12128): Elaborating entity "phase_vector_generator" for hierarchy "SVPWM:inst_svpwm|phase_vector_generator:inst_pvg" File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/SVPWM.v Line: 20
+Warning (10230): Verilog HDL assignment warning at phase_vector_generator.v(19): truncated value with size 32 to match size of target (15) File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/phase_vector_generator.v Line: 19
+Warning (10230): Verilog HDL assignment warning at phase_vector_generator.v(33): truncated value with size 22 to match size of target (12) File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/phase_vector_generator.v Line: 33
+Warning (10230): Verilog HDL assignment warning at phase_vector_generator.v(34): truncated value with size 22 to match size of target (12) File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/phase_vector_generator.v Line: 34
+Info (12128): Elaborating entity "sine_lut" for hierarchy "SVPWM:inst_svpwm|phase_vector_generator:inst_pvg|sine_lut:lut1" File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/phase_vector_generator.v Line: 26
+Info (12128): Elaborating entity "capwm" for hierarchy "SVPWM:inst_svpwm|capwm:phasea" File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/SVPWM.v Line: 26
+Info (12128): Elaborating entity "phase_pwm" for hierarchy "SVPWM:inst_svpwm|phase_pwm:phaseA" File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/SVPWM.v Line: 44
+Info (12128): Elaborating entity "seven_seg_rpm_driver" for hierarchy "seven_seg_rpm_driver:inst_actual_display" File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 375
+Warning (10230): Verilog HDL assignment warning at seven_seg_rpm_display.v(35): truncated value with size 32 to match size of target (24) File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/seven_seg_rpm_display.v Line: 35
+Warning (10230): Verilog HDL assignment warning at seven_seg_rpm_display.v(77): truncated value with size 32 to match size of target (2) File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/seven_seg_rpm_display.v Line: 77
+Warning (10230): Verilog HDL assignment warning at seven_seg_rpm_display.v(79): truncated value with size 32 to match size of target (16) File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/seven_seg_rpm_display.v Line: 79
+Info (276014): Found 2 instances of uninferred RAM logic
+    Info (276007): RAM logic "SVPWM:inst_svpwm|phase_vector_generator:inst_pvg|sine_lut:lut2|Ram0" is uninferred due to asynchronous read logic File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/sine_lut.v Line: 13
+    Info (276007): RAM logic "SVPWM:inst_svpwm|phase_vector_generator:inst_pvg|sine_lut:lut1|Ram0" is uninferred due to asynchronous read logic File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/sine_lut.v Line: 13
+Info (278001): Inferred 2 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 365
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 366
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 365
+Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 365
+    Info (12134): Parameter "LPM_WIDTHN" = "22"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_kbm.tdf
+    Info (12023): Found entity 1: lpm_divide_kbm File: C:/Users/Dhananjay Dhumal/Desktop/us_md/db/lpm_divide_kbm.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_qlh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_qlh File: C:/Users/Dhananjay Dhumal/Desktop/us_md/db/sign_div_unsign_qlh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_87f.tdf
+    Info (12023): Found entity 1: alt_u_div_87f File: C:/Users/Dhananjay Dhumal/Desktop/us_md/db/alt_u_div_87f.tdf Line: 27
+Warning (12136): Clear box output file C:/Users/Dhananjay Dhumal/Desktop/us_md/db/add_sub_7pc.tdf is not compatible with the current compile. Used regenerated output file C:/Users/Dhananjay Dhumal/Desktop/us_md/db/add_sub_7pc.tdf for elaboration
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc File: C:/Users/Dhananjay Dhumal/Desktop/us_md/db/add_sub_7pc.tdf Line: 23
+Warning (12136): Clear box output file C:/Users/Dhananjay Dhumal/Desktop/us_md/db/add_sub_8pc.tdf is not compatible with the current compile. Used regenerated output file C:/Users/Dhananjay Dhumal/Desktop/us_md/db/add_sub_8pc.tdf for elaboration
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc File: C:/Users/Dhananjay Dhumal/Desktop/us_md/db/add_sub_8pc.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div1" File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 366
+Info (12133): Instantiated megafunction "lpm_divide:Div1" with the following parameter: File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 366
+    Info (12134): Parameter "LPM_WIDTHN" = "22"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LED[3]" is stuck at GND File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 18
+    Warning (13410): Pin "LED[4]" is stuck at GND File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 18
+    Warning (13410): Pin "LED[5]" is stuck at GND File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 18
+    Warning (13410): Pin "LED[6]" is stuck at GND File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 18
+    Warning (13410): Pin "LED[7]" is stuck at GND File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 18
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 16 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/Dhananjay Dhumal/Desktop/us_md/us_md.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 5
+    Warning (15610): No output dependent on input pin "enc_z" File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 12
+Info (21057): Implemented 3180 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 12 input pins
+    Info (21059): Implemented 38 output pins
+    Info (21061): Implemented 3125 logic cells
+    Info (21062): Implemented 5 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 40 warnings
+    Info: Peak virtual memory: 4942 megabytes
+    Info: Processing ended: Mon Apr 27 17:12:20 2026
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:21
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/Dhananjay Dhumal/Desktop/us_md/us_md.map.smsg.
+
+

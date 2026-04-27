@@ -1,0 +1,4 @@
+Warning (10268): Verilog HDL information at us_md.v(215): always construct contains both blocking and non-blocking assignments File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/us_md.v Line: 215
+Info (10281): Verilog HDL Declaration information at SVPWM.v(26): object "phasea" differs only in case from object "phaseA" in the same scope File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/SVPWM.v Line: 26
+Info (10281): Verilog HDL Declaration information at SVPWM.v(32): object "phaseb" differs only in case from object "phaseB" in the same scope File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/SVPWM.v Line: 32
+Info (10281): Verilog HDL Declaration information at SVPWM.v(38): object "phasec" differs only in case from object "phaseC" in the same scope File: C:/Users/Dhananjay Dhumal/Desktop/us_md/code/SVPWM.v Line: 38

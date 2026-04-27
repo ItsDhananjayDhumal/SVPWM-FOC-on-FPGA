@@ -152,7 +152,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "angle_btns[3]",
+					"name" : "angle_btns[2]",
 					"strict" : false
 				},
 				{
@@ -160,7 +160,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "angle_btns[2]",
+					"name" : "angle_btns[3]",
 					"strict" : false
 				},
 				{
@@ -173,22 +173,6 @@
 				},
 				{
 					"name" : "enc_b",
-					"strict" : false
-				},
-				{
-					"name" : "altera_reserved_tms",
-					"strict" : false
-				},
-				{
-					"name" : "altera_reserved_tck",
-					"strict" : false
-				},
-				{
-					"name" : "altera_reserved_tdi",
-					"strict" : false
-				},
-				{
-					"name" : "altera_reserved_tdo",
 					"strict" : false
 				}
 			]
