@@ -1,5 +1,11 @@
-# FPGA Robotics
+# SVPWM FOC for BLDC on FPGA
 
-Quartus files for interfacing of Altera de0 nano FPGA with peripheral ECUs.
+## Hardware
+- 920 kV 12V rated BLDC motor
+- Altera de0 nano FPGA
+- GT06 Rotary Encoder
+- Custom 3 phase inverter
 
-currently interfaced hcsr04, n20 rotary encoders, ir sensors, motor driver. hc05 uart rx (115200 baud) under test.
+## Implementations
+- Constant Speed Control (PI)
+- Precise Angle Control (PID)
